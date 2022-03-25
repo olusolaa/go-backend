@@ -1,7 +1,6 @@
 package config
 
 const (
-	Env                 = "ENV"
-	EnvRedisUrl         = "REDIS_URL"
-
-
+	Env         = "ENV"
+	EnvRedisUrl = "REDIS_URL"
+)
