@@ -19,7 +19,6 @@ func NewResource(db *sqlx.DB, rd *redis.Client) *Resource {
 	}
 }
 
-// Router ...
 func (rs *Resource) Router() *chi.Mux {
 	r := chi.NewRouter()
 

@@ -14,7 +14,6 @@ import (
 	"github.com/olusolaa/go-backend/pkg/outbounds"
 	"github.com/pkg/errors"
 	"github.com/spf13/viper"
-	httpSwagger "github.com/swaggo/http-swagger"
 	"log"
 	"net/http"
 	"os"
@@ -23,20 +22,6 @@ import (
 	"time"
 )
 
-// @title        Go SMS API
-// @version      1.0
-// @description  This is an SMS server. You can visit the GitHub repository at https://github.com/olusola/go-backend
-
-// @contact.name   API Support
-// @contact.url    http://www.swagger.io/support
-// @contact.email  support@swagger.io
-
-// @license.name  MIT
-// @license.url   https://opensource.org/licenses/MIT
-
-// @host      localhost:8080
-// @BasePath  /
-// @securityDefinitions.basic  BasicAuth
 func main() {
 	godotenv.Load()
 	viper.AutomaticEnv()
@@ -50,7 +35,7 @@ func main() {
 
 	r := initRouter()
 
-	port := "6000"
+	port := "8080"
 	envPort := os.Getenv("PORT")
 	if envPort != "" {
 		port = envPort
@@ -99,7 +84,7 @@ func initRouter() http.Handler {
 
 	c := cors.New(cors.Options{
 		AllowOriginFunc:  func(r *http.Request, origin string) bool { return true },
-		AllowedMethods:   []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
+		AllowedMethods:   []string{"POST"},
 		AllowedHeaders:   []string{"Accept", "Authorization", "Content-Type", "X-CSRF-Token"},
 		ExposedHeaders:   []string{"Link"},
 		AllowCredentials: true,
@@ -135,7 +120,6 @@ func initRouter() http.Handler {
 		}
 	})
 
-	r.Mount("/swagger", httpSwagger.WrapHandler)
 	r.Route("/api", func(r chi.Router) {
 		db := config.GetDB()
 		rd := config.GetRedis()
