@@ -1,9 +1,9 @@
-development:
-  pool: 5
-  url: postgresql://postgres:root@127.0.0.1/assessment
-  unsafe: true
-
-development_follower:
-  pool: 5
-  url: postgresql://postgres:root@127.0.0.1/assessment
-  unsafe: true
+#development:
+#  pool: 5
+#  url: postgresql://postgres:root@127.0.0.1/assessment
+#  unsafe: true
+#
+#development_follower:
+#  pool: 5
+#  url: postgresql://postgres:root@127.0.0.1/assessment
+#  unsafe: true
