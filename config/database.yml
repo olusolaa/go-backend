@@ -9,21 +9,21 @@ development_follower:
   unsafe: true
 
 staging:
-  url: postgresql://postgres:root@127.0.0.1/assessment
+  url:
   env: "DATABASE_URL"
   unsafe: true
 
 staging_follower:
-  url: postgresql://postgres:root@127.0.0.1/assessment
+  url:
   env: "DATABASE_URL"
   unsafe: true
 
 production:
-  url: postgresql://postgres:root@127.0.0.1/assessment
+  url:
   env: "DATABASE_URL"
   unsafe: true
 
 production_follower:
-  url: postgresql://postgres:root@127.0.0.1/assessment
+  url:
   env: "DATABASE_URL_FOLLOWER"
   unsafe: true
