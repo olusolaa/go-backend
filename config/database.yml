@@ -1,29 +1,29 @@
 development:
   pool: 5
-  url: postgres://vdmjkzoouxvofa:56c86938549e8938c0622da34977129f55ad20285064993c31cb9363a427a484@ec2-63-32-248-14.eu-west-1.compute.amazonaws.com:5432/d9jar3ubjshkee
+  url: postgresql://postgres:root@127.0.0.1/assessment
   unsafe: true
 
 development_follower:
   pool: 5
-  url: postgres://vdmjkzoouxvofa:56c86938549e8938c0622da34977129f55ad20285064993c31cb9363a427a484@ec2-63-32-248-14.eu-west-1.compute.amazonaws.com:5432/d9jar3ubjshkee
+  url: postgresql://postgres:root@127.0.0.1/assessment
   unsafe: true
 
 staging:
-  url: postgres://vdmjkzoouxvofa:56c86938549e8938c0622da34977129f55ad20285064993c31cb9363a427a484@ec2-63-32-248-14.eu-west-1.compute.amazonaws.com:5432/d9jar3ubjshkee
+  url: postgresql://postgres:root@127.0.0.1/assessment
   env: "DATABASE_URL"
   unsafe: true
 
 staging_follower:
-  url: postgres://vdmjkzoouxvofa:56c86938549e8938c0622da34977129f55ad20285064993c31cb9363a427a484@ec2-63-32-248-14.eu-west-1.compute.amazonaws.com:5432/d9jar3ubjshkee
+  url: postgresql://postgres:root@127.0.0.1/assessment
   env: "DATABASE_URL"
   unsafe: true
 
 production:
-  url: postgres://vdmjkzoouxvofa:56c86938549e8938c0622da34977129f55ad20285064993c31cb9363a427a484@ec2-63-32-248-14.eu-west-1.compute.amazonaws.com:5432/d9jar3ubjshkee
+  url: postgresql://postgres:root@127.0.0.1/assessment
   env: "DATABASE_URL"
   unsafe: true
 
 production_follower:
-  url: postgres://vdmjkzoouxvofa:56c86938549e8938c0622da34977129f55ad20285064993c31cb9363a427a484@ec2-63-32-248-14.eu-west-1.compute.amazonaws.com:5432/d9jar3ubjshkee
+  url: postgresql://postgres:root@127.0.0.1/assessment
   env: "DATABASE_URL_FOLLOWER"
   unsafe: true
