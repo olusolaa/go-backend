@@ -120,7 +120,7 @@ func initRouter() http.Handler {
 		}
 	})
 
-	r.Route("/api", func(r chi.Router) {
+	r.Route("/", func(r chi.Router) {
 		db := config.GetDB()
 		rd := config.GetRedis()
 
@@ -139,8 +139,8 @@ func initRouter() http.Handler {
 		))
 		inboundRouter := inbounds.NewResource(db, rd)
 		outboundRouter := outbounds.NewResource(db, rd)
-		r.Mount("/inbound", inboundRouter.Router())
-		r.Mount("/outbound", outboundRouter.Router())
+		r.Mount("api/inbound", inboundRouter.Router())
+		r.Mount("api/outbound", outboundRouter.Router())
 	})
 
 	return r
